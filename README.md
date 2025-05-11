@@ -27,6 +27,11 @@ install depedencies
 ```bash
 npm install --legacy-peer-deps
 ```
+copy .env
+```bash
+cp .env.example .env
+```
+
 Environtment
 Copy this line to .env
 ```ini 
