@@ -27,6 +27,11 @@ install depedencies
 ```bash
 npm install --legacy-peer-deps
 ```
+Environtment
+
+```ini 
+NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
+```
 
 Run App on Local
 ```bash
