@@ -28,7 +28,7 @@ install depedencies
 npm install --legacy-peer-deps
 ```
 Environtment
-
+Copy this line to .env
 ```ini 
 NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
 ```
