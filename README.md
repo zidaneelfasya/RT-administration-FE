@@ -1,5 +1,5 @@
 # 🚀 Next.js TypeScript Web Application
-
+# Rt-Administration System
 Ini adalah aplikasi web yang dibangun menggunakan [Next.js](https://nextjs.org/) dengan dukungan TypeScript.
 
 ## 📦 Prasyarat
