@@ -220,6 +220,10 @@ export function RumahDataTable() {
     fetchData();
   }, []);
 
+  const isDihuni = (penghuniRumah: any[]) => {
+    return penghuniRumah.some(pr => pr.tanggal_selesai === null );
+  };
+
   const columns: ColumnDef<z.infer<typeof rumahSchema>>[] = [
     {
       id: "select",
@@ -253,15 +257,16 @@ export function RumahDataTable() {
       accessorKey: "status_penghuni",
       header: "Status",
       cell: ({ row }) => {
-        const status = row.original.status_penghuni;
+        const isOccupied = isDihuni(row.original.penghuni_rumah);
         return (
-          <Badge variant={status === "dihuni" ? "default" : "secondary"}>
-            {status === "dihuni" ? "Dihuni" : "Tidak Dihuni"}
+          <Badge variant={isOccupied ? "default" : "secondary"}>
+            {isOccupied ? "Dihuni" : "Tidak Dihuni"}
           </Badge>
         );
       },
       filterFn: (row, id, value) => {
-        return value.includes(row.getValue(id));
+        const isOccupied = isDihuni(row.original.penghuni_rumah);
+        return value.includes(isOccupied ? "dihuni" : "tidak_dihuni");
       },
     },
     // {

@@ -55,6 +55,7 @@ function PenghuniDetailView({
   
   const BASE_URL = "http://localhost:8000";
   const fullImageUrl = `${BASE_URL}/storage/${penghuni.foto_ktp}`;
+  
 
   const [formData, setFormData] = useState({
     nama_lengkap: penghuni.nama_lengkap,
@@ -107,6 +108,7 @@ function PenghuniDetailView({
   };
 
   const handleUpdateKtp = () => {
+    console.log("file", fullImageUrl)
     window.location.href = `/penghuni/${penghuni.id}/update-ktp`; // Adjust the route as needed
     // route.push(`/penghuni/${penghuni.id}/update-ktp`); // Adjust the route as needed
   };

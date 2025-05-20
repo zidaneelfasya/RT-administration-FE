@@ -36,13 +36,14 @@ export function NavUser({
     avatar?: string;
   };
 }) {
+  const{logout} = useAuth({middleware: "auth"})
+
   const { isMobile } = useSidebar();
   // Return null or a loading state if user is not yet loaded
   if (!user) {
     return null; // or return a loading spinner
   }
 
-  const{logout} = useAuth({middleware: "auth"})
   return (
     <SidebarMenu>
       <SidebarMenuItem>
